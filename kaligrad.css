@@ -7,8 +7,8 @@ body {
 }
 
 #WIP{
-	font-size: 14px;
-	color: red;
+  font-size: 14px;
+  color: red;
 }
 
 #image {
@@ -18,12 +18,12 @@ body {
   margin-bottom: 1em;
 }
 
-#text {
-	width: 100%;
-	height: 100%;
-	border: 1px solid white;
-	border-radius: 15px;
-	text-align: center;
+#game {
+  width: 100%;
+  height: 100%;
+  border: 1px solid white;
+  border-radius: 15px;
+  text-align: center;
 }
 
 input {

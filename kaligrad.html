@@ -2,20 +2,28 @@
 <html>
 <title>Age of Kaligrad</title>
 <meta charset="utf-8">
-<link rel="stylesheet" type="text/css" href="kaligrad.css">
+<link rel="stylesheet" type="text/css" href="kaligrad2.css">
+
 <body>
-	<header id="menu">
-		<button onclick="storyMode()" id="storyModeButton" class="menubutton">Story</button>
-		<button onclick="shop()" id="shopButton" class="menubutton">Shop</button>
-		<button onclick="battleMode()" id="battleModeButton" class="menubutton">Battle</button>
-	</header>
-	<br>
-	<div id="WIP">This is a work in progress. AoK PreAlpha</div>
-	<br>
-	<div id=image></div>
-	<div id=text></div>
-	<input id="input" onkeydown="playerName()" placeholder="Type your name and press Enter to start your journey.">
-	<div id="choices"></div>
-<script src="kaligrad.js"></script>
+    <div id="container">
+        <header id="menu">
+            <button onclick="storyMode()" id="storyModeButton" class="menubutton">Story</button>
+            <button onclick="shop()" id="shopButton" class="menubutton">Shop</button>
+            <button onclick="battleMode()" id="battleModeButton" class="menubutton">Battle</button>
+        </header>
+        <br>
+        <div id="WIP">This is a work in progress. AoK PreAlpha</div>
+        <br>
+        <div id="game">
+            <div id=image></div>
+            <div id=text></div>
+            <button id="start" onclick="gameSetup()">Start your Adventure</button>
+            <div id="choices"></div>
+        </div>
+        <button id="instructions" onclick="howTo()">Instructions</button>
+        <button id="player" onclick="playerInfo()">Player</button>
+    </div>
+    <script src="kaligrad2.js"></script>
 </body>
+
 </html>
