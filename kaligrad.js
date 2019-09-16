@@ -83,7 +83,19 @@ var advanceTo = function(s) {
     changeImage(s.image)
     changeText(s.text)
     changeButtons(s.buttons)
-};
+}
+
+function storyMode(){
+  alert("Currently a placeholder.")
+}
+
+function shop(){
+  alert("Currently a placeholder.")
+}
+
+function battleMode(){
+  alert("Currently a placeholder.")
+}
 
 //start
 
