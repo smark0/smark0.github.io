@@ -197,7 +197,7 @@ var scenario = {
         image: "",
         text: "You travel together for quite some time, yet it turns nighttime before you arrive at the town. The traveler recommends setting up a camp as soon as possible, as traveling by night can be very dangerous.",
         buttons: [
-            ["Convince him to keep traveling", "advanceTo(scenario.eleven"],
+            ["Convince him to keep traveling", "advanceTo(scenario.eleven)"],
             ["Set up a camp", "advanceTo(scenario.twelve)"]
         ]
     },
