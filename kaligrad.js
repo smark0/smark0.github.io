@@ -78,12 +78,12 @@ var changeImage = function(img) {
 var changeButtons = function(buttonList) {
     choices.innerHTML = ""
     for (var i = 0; i < buttonList.length; i++) {
-        choices.innerHTML += "<button onClick=" + buttonList[i][1] + ">" + buttonList[i][0] + "</button>"
+        choices.innerHTML += "<button id='choicebut' onClick=" + buttonList[i][1] + ">" + buttonList[i][0] + "</button>"
     }
 }
 // updates and saves part nr for further use
 var updatePart = function(partnr) {
-  partNum = partnr
+    partNum = partnr
 }
 
 //this is what moves the game along
@@ -94,8 +94,15 @@ var advanceTo = function(s) {
     updatePart(s)
 }
 
+partNum = 0
+
 function storyMode() {
-    alert("Currently a placeholder.")
+  if (partNum === 0){
+  alert("This function has not been unlocked yet.")
+  }
+  else {
+  advanceTo(partNum)
+  }
 }
 
 function shop() {
@@ -113,7 +120,6 @@ firstStory = 0
 function gameStart() {
     if (firstStory == 0) {
         firstStory++
-        console.log("Storylog " + firstStory)
         advanceTo('prologue')
     } else {
         location.reload(true)
@@ -124,22 +130,22 @@ function gameStart() {
 
 var scenario = {
 
-//prologue 
+    //prologue 
 
-  prologue: {
-    image: "",
-    text: "Chapter 0 - Prologue",
-    buttons: [
-    ["Begin - Chapter 0","advanceTo('one')" ]
-    ]
-  },
-  prologue1: {
-    image: "",
-    text: "Chapter 0.1 - ",
-    buttons: [
-    ["Begin - Chapter 0","advanceTo('one')"]
-    ]
-  },
+    prologue: {
+        image: "",
+        text: "Chapter 0 - Prologue",
+        buttons: [
+            ["Begin - Chapter 0", "advanceTo('one')"]
+        ]
+    },
+    prologue1: {
+        image: "",
+        text: "Chapter 0.1 - ",
+        buttons: [
+            ["Begin - Chapter 0", "advanceTo('one')"]
+        ]
+    },
     one: {
         image: "",
         text: "You eagerly await the release of Age of Aincrad. When searching around the Internet, you encounter something called 'Age of Kaligrad'. Interested, you click on the link.",
@@ -218,137 +224,137 @@ var scenario = {
         ]
     },
     eleven: {
-      image: "",
-      text: "'Are you trying to get me killed?' responds the traveler, obviously irrated. 'Don't you know these fields?', he asks. You consider telling him about your situation.",
-      buttons: [
-    ["Tell him about yourself and your situation","advanceTo('fourt')"],
-    ["Claim just to be unfamiliar with these lands","advanceTo('fivet')"]
-      ]
+        image: "",
+        text: "'Are you trying to get me killed?' responds the traveler, obviously irrated. 'Don't you know these fields?', he asks. You consider telling him about your situation.",
+        buttons: [
+            ["Tell him about yourself and your situation", "advanceTo('fourt')"],
+            ["Claim just to be unfamiliar with these lands", "advanceTo('fivet')"]
+        ]
     },
     twelve: {
-      image: "",
-      text: "You agree to set up a camp. Suddenly a tent appears in front of you. 'Sadly, I can't offer you anything to eat, but go to sleep, tomorrow we'll hopefully arrive in town.', he says calmly. 'How did those tents appear?', you ask. 'It's the inventory, don't you know that?', he replies as it were the most normal thing.",
-      buttons: [
-      ["Tell him about yourself and your situation","advanceTo('fourt')"],
-    ["Blame your confusion on exhaustion","advanceTo('fivet')"]
-      ]
+        image: "",
+        text: "You agree to set up a camp. Suddenly a tent appears in front of you. 'Sadly, I can't offer you anything to eat, but go to sleep, tomorrow we'll hopefully arrive in town.', he says calmly. 'How did those tents appear?', you ask. 'It's the inventory, don't you know that?', he replies as it were the most normal thing.",
+        buttons: [
+            ["Tell him about yourself and your situation", "advanceTo('fourt')"],
+            ["Blame your confusion on exhaustion", "advanceTo('fivet')"]
+        ]
     },
     thirt: {
-      image: "",
-      text: "It starts raining. You rush down a hill and find a slight opening and decide to spend the night there. You hear the rain dripping slighty beside your head. You slowly fall asleep.",
-      buttons: [
-    ["zZzZzZz","advanceTo('sixt')"]
-      ]
+        image: "",
+        text: "It starts raining. You rush down a hill and find a slight opening and decide to spend the night there. You hear the rain dripping slighty beside your head. You slowly fall asleep.",
+        buttons: [
+            ["zZzZzZz", "advanceTo('sixt')"]
+        ]
     },
     fourt: {
-      image: "",
-      text: "You explain about your world, about how you woke up here and know nothing about this world. The traveler is visibly shaken and tries to cheer you up. 'Maybe someone in Generos can help you.', he says. 'Now get some sleep, I'll bring you safe to Generos.'",
-      buttons: [
-    ["Go to sleep.","advanceTo('sevent')"]
-      ]
+        image: "",
+        text: "You explain about your world, about how you woke up here and know nothing about this world. The traveler is visibly shaken and tries to cheer you up. 'Maybe someone in Generos can help you.', he says. 'Now get some sleep, I'll bring you safe to Generos.'",
+        buttons: [
+            ["Go to sleep.", "advanceTo('sevent')"]
+        ]
     },
     fivet: {
-      image: "",
-      text: "'It's fine', he sighs. 'Don't worry, we'll arrive safe and sound tomorrow in Generos, now get some sleep.', he adds.",
-      buttons: [
-    ["Go to sleep.","advanceTo('eightt')"]
-      ]
+        image: "",
+        text: "'It's fine', he sighs. 'Don't worry, we'll arrive safe and sound tomorrow in Generos, now get some sleep.', he adds.",
+        buttons: [
+            ["Go to sleep.", "advanceTo('eightt')"]
+        ]
     },
     sixt: {
-      image: "",
-      text: "You awake slowly to the sun blinding you, your clothes are wet and a mess, but you are safe. Time to find the town.",
-      buttons: [
-    ["Keep searching for the town","advanceTo('ninet')"]
-      ]
+        image: "",
+        text: "You awake slowly to the sun blinding you, your clothes are wet and a mess, but you are safe. Time to find the town.",
+        buttons: [
+            ["Keep searching for the town", "advanceTo('ninet')"]
+        ]
     },
     sevent: {
-      image: "",
-      text: "You awake annoyed to the sound of a rooster signaling the time right beside your tent. You step outside slighty struck, only to be greeted by the traveler in a motivated fashion. 'Good morning, pal. Ready to leave?', he asks. ",
-      buttons: [
-    ["'...Good morning, let's go.'","advanceTo('twenty')"]
-      ]
+        image: "",
+        text: "You awake annoyed to the sound of a rooster signaling the time right beside your tent. You step outside slighty struck, only to be greeted by the traveler in a motivated fashion. 'Good morning, pal. Ready to leave?', he asks. ",
+        buttons: [
+            ["'...Good morning, let's go.'", "advanceTo('twenty')"]
+        ]
     },
     eightt: {
-      image: "",
-      text: "You awake annoyed to the sound of a rooster signaling the time right beside your tent. You step outside slighty struck, only to be greeted by the traveler, who is preparing to leave. 'Mornin', pal. Ready to leave?', he asks.",
-      buttons: [
-    ["'*yawn*, Good morning, let's go.'","advanceTo('twenty1')"]
-      ]
+        image: "",
+        text: "You awake annoyed to the sound of a rooster signaling the time right beside your tent. You step outside slighty struck, only to be greeted by the traveler, who is preparing to leave. 'Mornin', pal. Ready to leave?', he asks.",
+        buttons: [
+            ["'*yawn*, Good morning, let's go.'", "advanceTo('twenty1')"]
+        ]
     },
     ninet: {
-      image: "",
-      text: "You walk quite some time until you found something that looks like a road. There is a sign near the road saying 'Generos 500m ->'. You rush the way the sign shows to slowly see the gates of a town apparently called Generos.",
-      buttons: [
-    ["Enter the town.","advanceTo('prologueend')"]
-      ]
+        image: "",
+        text: "You walk quite some time until you found something that looks like a road. There is a sign near the road saying 'Generos 500m ->'. You rush the way the sign shows to slowly see the gates of a town apparently called Generos.",
+        buttons: [
+            ["Enter the town.", "advanceTo('prologueend')"]
+        ]
     },
     twenty: {
-      image: "",
-      text: "You and the traveler walk quite some time, exchanging information and having random conversation until you found something that looks like a road. There is a sign near the road saying 'Generos 500m ->'. You point to the sign and the two of you rush the way the sign shows to slowly see the gates of the town called Generos.",
-      buttons: [
-    ["Enter the town.","advanceTo('prologueend')"]
-      ]
+        image: "",
+        text: "You and the traveler walk quite some time, exchanging information and having random conversation until you found something that looks like a road. There is a sign near the road saying 'Generos 500m ->'. You point to the sign and the two of you rush the way the sign shows to slowly see the gates of the town called Generos.",
+        buttons: [
+            ["Enter the town.", "advanceTo('prologueend')"]
+        ]
     },
     twenty1: {
-      image: "",
-      text: "You and the traveler walk quite some time until you found something that looks like a road. There is a sign near the road saying 'Generos 500m ->'. You point to the sign and the two of you rush the way the sign shows to slowly see the gates of a town apparently called Generos.",
-      buttons: [
-    ["Enter the town.","advanceTo('prologueend')"]
-      ]
+        image: "",
+        text: "You and the traveler walk quite some time until you found something that looks like a road. There is a sign near the road saying 'Generos 500m ->'. You point to the sign and the two of you rush the way the sign shows to slowly see the gates of a town apparently called Generos.",
+        buttons: [
+            ["Enter the town.", "advanceTo('prologueend')"]
+        ]
     },
     prologueend: {
-      image: "",
-      text: "This is the end of the prologue for 3 of the 4 currently existing routes. As you may have noticed, the cave is not yet explorable. This is on my 'to-do' list for the next few days. Until then, I hope my story so far isn't that boring. Once I have established a combat system, the prologue will also feature some combat, look forward to that.",
-      buttons: [
-    ["Back to main menu","location.reload(true)"]
-      ]
+        image: "",
+        text: "This is the end of the prologue for 3 of the 4 currently existing routes. As you may have noticed, the cave is not yet explorable. This is on my 'to-do' list for the next few days. Until then, I hope my story so far isn't that boring. Once I have established a combat system, the prologue will also feature some combat, look forward to that.",
+        buttons: [
+            ["Back to main menu", "location.reload(true)"]
+        ]
     },
     //chapter 1 variations
 
     // ch1-a: { //travel w traveler, explain situation
-  //  image: "",
-  //  text: "Chapter 1 - Generos",
-  //  buttons: [
-  //  ["Begin Chapter 1- Generos"]
-  //  ]
-  // },
-  // ch1-b: { // travel w traveler, lie
-  //  image: "",
-  //  text: "Chapter 1 - Generos",
-  //  buttons: [
-  //  ["Begin Chapter 1- Generos"]
-  //  ]
-  // },
-  // ch1-c: { // don't travel w traveler, hide out
-  //  image: "",
-  //  text: "Chapter 1 - Generos",
-  //  buttons: [
-  //  ["Begin Chapter 1- Generos"]
-  //  ]
-  // }
-  // ch1-d: { // cave
-  //  image: "",
-  //  text: "Chapter 1 - Generos",
-  //  buttons: [
-  //  ["Begin Chapter 1- Generos"]
-  //  ]
-  // }
+    //  image: "",
+    //  text: "Chapter 1 - Generos",
+    //  buttons: [
+    //  ["Begin Chapter 1- Generos"]
+    //  ]
+    // },
+    // ch1-b: { // travel w traveler, lie
+    //  image: "",
+    //  text: "Chapter 1 - Generos",
+    //  buttons: [
+    //  ["Begin Chapter 1- Generos"]
+    //  ]
+    // },
+    // ch1-c: { // don't travel w traveler, hide out
+    //  image: "",
+    //  text: "Chapter 1 - Generos",
+    //  buttons: [
+    //  ["Begin Chapter 1- Generos"]
+    //  ]
+    // }
+    // ch1-d: { // cave
+    //  image: "",
+    //  text: "Chapter 1 - Generos",
+    //  buttons: [
+    //  ["Begin Chapter 1- Generos"]
+    //  ]
+    // }
 
     //from here on, all written scenarios will only occur on a game over or on an incomplete path
     errorcave: {
         image: "",
         text: "This scenario has not been written yet. Please select a different choice.",
         buttons: [
-        ["Return to the previous option.", "advanceTo('six')"]
+            ["Return to the previous option.", "advanceTo('six')"]
         ]
     },
     end0: { //dont travel w traveler, explore during the night
-      image: "",
-      text: "You convince yourself that you have nothing to fear. You keep pressing onwards on the plain, but fail to notice that you're slowly getting surrounded by wolves. By the time you notice, it is already too late and they attack. Unable to defend yourself against a pack of wolves, you perish in the plain.",
-      buttons: [
-    ["GAME OVER - Return to main menu","location.reload(true)"]
-      ]
-  }
+        image: "",
+        text: "You convince yourself that you have nothing to fear. You keep pressing onwards on the plain, but fail to notice that you're slowly getting surrounded by wolves. By the time you notice, it is already too late and they attack. Unable to defend yourself against a pack of wolves, you perish in the plain.",
+        buttons: [
+            ["GAME OVER - Return to main menu", "location.reload(true)"]
+        ]
+    }
 }
 
 //to-do list:
